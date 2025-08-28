@@ -1,43 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My GitHub Page</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 20px;
-background-color: #f4f4f4;
-text-align: center;
-}
-h1 {
-color: #333;
-}
-p {
-color: #666;
-}
-.project {
-margin: 20px 0;
-padding: 15px;
-background-color: #fff;
-border-radius: 5px;
-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Website Blueprint</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f5f5;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    nav {
+      margin: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    section {
+      background: #fff;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #ddd;
+    }
+    form {
+      margin: 10px 0;
+    }
+    input {
+      padding: 8px;
+      margin: 5px 0;
+      width: 90%;
+      border: 1px solid #333;
+      border-radius: 4px;
+    }
+    button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 5px;
+    }
+    button:hover {
+      background: #555;
+    }
+    .border-box {
+      border: 2px solid teal;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 8px;
+      background: #e0f7f7;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #666;
+    }
+    #login-message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-<h1>Welcome to My GitHub Page</h1>
-<p>This is a simple static site hosted on GitHub Pages. Last updated on August 14,
-,→ 2025.</p>
-<div class="project">
-<h2>Python HTTP Server Project</h2>
-<p>Explore my simple Python HTTP server that responds with "Hello World" on␣
-,→port 8080. Check the <a href="https://github.com/<username>/<repo>/blob/main/server.
-,→py">server.py</a> code and analyze traffic with Wireshark!</p>
-</div>
-<p>Feel free to customize this page or add more content. Check back for updates!</
-,→p>
+
+  <!-- Header -->
+  <header>
+    <h1>My Sample HTML Page</h1>
+    <p>All Tasks Combined</p>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="#movies">Movies</a>
+    <a href="#tea">Make Tea</a>
+    <a href="#login">Login</a>
+  </nav>
+
+  <!-- Section 1 -->
+  <section id="movies">
+    <h2>My Favorite Movies</h2>
+    <ul>
+      <li>Inception</li>
+      <li>Interstellar</li>
+      <li>The Dark Knight</li>
+    </ul>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="tea">
+    <h2>Steps to Make Tea</h2>
+    <ol>
+      <li>Boil water</li>
+      <li>Add tea leaves</li>
+      <li>Simmer for 2-3 minutes</li>
+      <li>Add milk and sugar</li>
+      <li>Strain and serve</li>
+    </ol>
+  </section>
+
+  <!-- Table with Students -->
+  <section>
+    <h2>Student Scores</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Rahul</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>Anita</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Vikram</td>
+        <td>78</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Form for Email & Password -->
+  <section>
+    <h2>Subscribe Form</h2>
+    <form>
+      <input type="email" placeholder="Enter your email" required><br>
+      <input type="password" placeholder="Enter your password" required><br>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Div with Border -->
+  <div class="border-box">
+    <h3>About Me</h3>
+    <p>I am a student passionate about web development and structural engineering.</p>
+  </div>
+
+  <!-- Login Form with JS -->
+  <section id="login">
+    <h2>Login Form</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+    <p id="login-message"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
+
+  <script>
+    // Simple login validation
+    const loginForm = document.getElementById("loginForm");
+    const loginMsg = document.getElementById("login-message");
+
+    loginForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Local validation (sample credentials)
+      if(username === "admin" && password === "1234") {
+        loginMsg.textContent = "Login successful!";
+        loginMsg.style.color = "green";
+      } else {
+        loginMsg.textContent = "Invalid credentials.";
+        loginMsg.style.color = "red";
+      }
+    });
+  </script>
+
 </body>
 </html>
+
+
+      <li>Interstellar</li>
+      <li>The Dark Knight</li>
+    </ul>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="tea">
+    <h2>Steps to Make Tea</h2>
+    <ol>
+      <li>Boil water</li>
+      <li>Add tea leaves</li>
+      <li>Simmer for 2-3 minutes</li>
+      <li>Add milk and sugar</li>
